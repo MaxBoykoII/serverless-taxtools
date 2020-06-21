@@ -22,9 +22,10 @@ provider:
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
 
 functions:
-  hello:
-    handler: handler.hello
+  GetTags:
+    handler: src/lambda/http/getTags.handler
     events:
       - http:
           method: get
-          path: hello
+          path: tags
+          cors: true
